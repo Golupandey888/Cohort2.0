@@ -13,21 +13,23 @@ body{
   align-items: center;
   justify-content: center;
 }
-@keyframes changeBackgroundColor{
+@property --bgColor{
+  syntax: "<color>";
+  initial-value:rgb(7, 187, 25);
+  inherits: false;
+}
+@keyframes animationgbColor{
   from{
-    background-color: white;
-    border-radius: 0px;
-    scale: 1;
+   --bgColor:red;
   }
   to{
-    background-color: crimson;
-    border-radius: 10px;
-    scale: 0.5;
+    --bgColor: royalblue;
   }
 }
 .box{
 height: 200px;
 width: 300px;
-background-color: white;
-animation: changeBackgroundColor 5s infinite forwards alternate;
+background-color: var(--bgColor);
+animation: animationgbColor 5s ;
+
 }
